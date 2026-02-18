@@ -6,7 +6,7 @@
   "tailwind": {
     "config": "",
     "css": "app/globals.css",
-    "baseColor": "gray",
+    "baseColor": "neutral",
     "cssVariables": true,
     "prefix": ""
   },
@@ -20,6 +20,7 @@
     "hooks": "@/hooks"
   },
   "registries": {
+    "@magicui": "https://magicui.design/r/{name}",
     "@react-bits": "https://reactbits.dev/r/{name}.json"
   }
 }

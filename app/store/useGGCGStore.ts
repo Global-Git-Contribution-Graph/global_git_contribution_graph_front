@@ -26,13 +26,6 @@ export const useGGCGStore = create<GGCGState>((set, get) => ({
             url: "https://github.com",
         },
         {
-            id: "gl",
-            name: "gitlab",
-            username: "mguilbert",
-            token: "",
-            url: "https://git.ixapack.io",
-        },
-        {
             id: "fj",
             name: "forgejo",
             username: "mguilbert",

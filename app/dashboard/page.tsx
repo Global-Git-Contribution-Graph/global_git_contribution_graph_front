@@ -6,7 +6,7 @@ import { StatsPanel } from "../components/StatsPanel";
 export default function DashboardPage() {
     return (
         <BackgroundDots>
-            <main className="p-6">
+            <main className="h-full overflow-hidden p-6">
                 <StatsPanel />
             </main>
         </BackgroundDots>

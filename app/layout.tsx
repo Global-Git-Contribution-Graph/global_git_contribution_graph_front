@@ -27,7 +27,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+                className={`${geistSans.variable} ${geistMono.variable} min-h-screen bg-[#0d1117] text-[#c9d1d9] antialiased`}
             >
                 <UrqlProvider>{children}</UrqlProvider>
             </body>
