@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 export function BackgroundDots({ children }: { children: React.ReactNode }) {
 	return (
 		<div className="relative h-full w-full overflow-hidden bg-[#0d1117] text-[#c9d1d9]">
-			<div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_15%,rgba(47,129,247,0.14),transparent_35%),radial-gradient(circle_at_82%_78%,rgba(57,211,83,0.08),transparent_40%)]" />
+			<div className="pointer-events-none absolute inset-0 bg-gray" />
 			<DotPattern
 				width={22}
 				height={22}

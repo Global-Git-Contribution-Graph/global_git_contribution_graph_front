@@ -17,6 +17,7 @@ type StatsData = {
 
 export function StatsPanel() {
   const forges = useGGCGStore((s) => s.forges);
+  const heatmapPrimaryColor = useGGCGStore((s) => s.heatmapPrimaryColor);
   const contentRef = useRef<HTMLDivElement | null>(null);
   const [surfaceSize, setSurfaceSize] = useState<{ width: number; height: number }>({
     width: 0,
@@ -83,7 +84,7 @@ export function StatsPanel() {
       >
         <div ref={contentRef} className="inline-flex flex-col">
           <div className="w-fit rounded-md border border-white/10 bg-black/15 p-3">
-            <Heatmap weeks={weeks} />
+            <Heatmap weeks={weeks} primaryColor={heatmapPrimaryColor} />
           </div>
         </div>
       </GlassSurface>

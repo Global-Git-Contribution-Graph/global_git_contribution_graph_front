@@ -13,10 +13,12 @@ export type ForgeConfig  = {
 type GGCGState = {
   forges: ForgeConfig[];
   setForges: (forges: ForgeConfig[]) => void;
+  heatmapPrimaryColor: string;
+  setHeatmapPrimaryColor: (color: string) => void;
 };
 
 
-export const useGGCGStore = create<GGCGState>((set, get) => ({
+export const useGGCGStore = create<GGCGState>((set) => ({
     forges: [
         {
             id: "gh",
@@ -34,4 +36,6 @@ export const useGGCGStore = create<GGCGState>((set, get) => ({
         },
     ],
     setForges: (forges) => set({ forges }),
+    heatmapPrimaryColor: "#39d353",
+    setHeatmapPrimaryColor: (heatmapPrimaryColor) => set({ heatmapPrimaryColor }),
 }));
