@@ -2,7 +2,15 @@
 
 import { useMemo } from "react";
 
-import type { HeatCell, HeatWeek } from "../lib/heatmap";
+export type HeatCell = {
+  date: string;
+  count: number;
+  level: number; // 0 to 4
+};
+
+export type HeatWeek = {
+  days: HeatCell[];
+};
 
 type RGB = { r: number; g: number; b: number };
 
@@ -75,12 +83,12 @@ export function Heatmap({ weeks, primaryColor }: { weeks: HeatWeek[]; primaryCol
     <div className="flex gap-0.75">
       {weeks.map((week, wIdx) => (
         <div key={wIdx} className="flex flex-col gap-0.75">
-          {week.map((cell) => (
+          {week.days.map((cell) => (
             <div
               key={cell.date}
               title={`${cell.date} - ${cell.count}`}
               className="h-5 w-5 rounded-[3px]"
-              style={{ backgroundColor: palette[cell.level] }}
+              style={{ backgroundColor: palette[cell.level as keyof typeof palette] }}
             />
           ))}
         </div>

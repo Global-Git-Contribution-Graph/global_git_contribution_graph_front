@@ -34,6 +34,13 @@ export const useGGCGStore = create<GGCGState>((set) => ({
             token: "",
             url: "https://forge.cloudron.evereast-solutions.com",
         },
+        {
+            id: "gl",
+            name: "gitlab",
+            username: "mguilbert",
+            token: "",
+            url: "https://git.ixapack.io",
+        },
     ],
     setForges: (forges) => set({ forges }),
     heatmapPrimaryColor: "#39d353",

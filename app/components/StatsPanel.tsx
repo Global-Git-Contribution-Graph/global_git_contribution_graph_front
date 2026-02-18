@@ -6,12 +6,11 @@ import GlassSurface from "../../components/GlassSurface";
 
 import { useGGCGStore } from "../store/useGGCGStore";
 import { STATS_QUERY } from "../graphql/queries";
-import { buildHeatmapWeeks, type HistoryPoint } from "../lib/heatmap";
-import { Heatmap } from "./Heatmap";
+import { Heatmap, HeatWeek } from "./Heatmap";
 
 type StatsData = {
   stats: {
-    history: HistoryPoint[];
+    heatmap: HeatWeek[];
   };
 };
 
@@ -34,7 +33,7 @@ export function StatsPanel() {
     variables: { forges: gqlForges },
   });
 
-  const weeks = data ? buildHeatmapWeeks(data.stats.history, 52) : [];
+  const weeks = data?.stats.heatmap || [];
 
   useLayoutEffect(() => {
     if (!data) return;
