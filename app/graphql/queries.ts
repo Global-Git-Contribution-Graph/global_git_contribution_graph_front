@@ -1,6 +1,6 @@
 export const STATS_QUERY = `
-    query Stats($forges: [ForgeInput!]!) {
-        stats(forges: $forges) {
+    query Stats($uid: String!, $forges: [ForgeInput!]!) {
+        stats(uid: $uid, forges: $forges) {
             heatmap {
                 days {
                     date

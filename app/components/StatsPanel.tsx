@@ -17,6 +17,7 @@ type StatsData = {
 export function StatsPanel() {
   const forges = useGGCGStore((s) => s.forges);
   const heatmapPrimaryColor = useGGCGStore((s) => s.heatmapPrimaryColor);
+  const uid = useGGCGStore((s) => s.uid);
   const contentRef = useRef<HTMLDivElement | null>(null);
   const [surfaceSize, setSurfaceSize] = useState<{ width: number; height: number }>({
     width: 0,
@@ -30,7 +31,7 @@ export function StatsPanel() {
 
   const [{ data, fetching, error }] = useQuery<StatsData>({
     query: STATS_QUERY,
-    variables: { forges: gqlForges },
+    variables: { uid, forges: gqlForges },
   });
 
   const weeks = data?.stats.heatmap || [];
